@@ -33,5 +33,6 @@ You can use the "Reset" button to empty all the backlog workspace (please think 
 * [ ] Check if backlog was saved before reseting
 * [ ] Add a remove backlog option
 * [ ] Add a rename backlog option
+* [ ] Move js and css files to distinct folders
 
-If you have any other ideas feel free to comment!   
+If you have any other ideas feel free to ask!   
