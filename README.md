@@ -17,11 +17,11 @@ To add a task to the backlog just click the "Add Task" button, it will be direct
 
 You can edit the content of a task by just double-cicking it.
 
-Then to move a task between development steps, just drag and drop it on the corresponding colum.
+Then to move a task between development steps, just drag and drop it on the corresponding column.
 
 Once you have saved a backlog, you can select it from the "Select a backlog list" to load it again.
 
-You can rename a backlog by changing its name in the "Backlog ame" field and clicking on "Rename Backlog" button.
+You can rename a backlog by changing its name in the "Backlog Name" field and clicking on "Rename Backlog" button.
 
 To delete a backlog just select it in the list and click the "Delete Selected" button.
 
