@@ -11,7 +11,7 @@ try
         if(!file_exists("../backlogs/"))
             mkdir("../backlogs/", 0777, true);
 
-        if(file_put_contents("../backlogs/".$fileName, $fileContent))
+        if(file_put_contents("../backlogs/".$fileName, LOCK_EX))
         {
             echo "Backlog '".$_POST['fileName']."' saved successfully !";
         }
