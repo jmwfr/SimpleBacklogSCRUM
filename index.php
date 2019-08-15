@@ -40,7 +40,7 @@
                             <?php
                             foreach ($backlogsFiles as $backlogFile) {
                                 ?>
-                                <option value="<?php echo $backlogFile; ?>"><?php echo implode(".", explode(".", $backlogFile, -1)); ?></option>
+                                <option value="<?php echo $backlogFile; ?>"><?php echo implode(".", explode(".", str_replace("___", " ", $backlogFile), -1)); ?></option>
                                 <?php
                             }
                             ?>
@@ -56,6 +56,7 @@
             <div id="backlogNameWrapper" class="mb-3">
                 <label for="backlogName" class="w-100 text-center">Backlog Name</label>
                 <input id="backlogName" class="form-control" name="backlogName" type="text">
+                <button id="renameBacklog" class="btn btn-primary w-100 mt-2">Rename Backlog</button>
                 <button id="saveBacklog" class="btn btn-primary w-100 mt-2">Save Backlog</button>
             </div>
             <button id="btnAddTask" class="btn btn-primary w-100">Add Task</button>

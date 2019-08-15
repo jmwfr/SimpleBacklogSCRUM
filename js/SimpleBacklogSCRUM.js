@@ -24,7 +24,7 @@ function saveBacklog(backlogFileName, backlogContent) {
         data: {action: "save", fileName: backlogFileName, fileContent: backlogContent},
         success: function (data, textStatus, jqXHR) {
             let newOption = $('<option>', {
-                value: backlogFileName,
+                value: backlogFileName + ".json",
                 text: $('#backlogName').val()
             });
             if(!$.contains('#backlogSelector', newOption))
@@ -49,6 +49,22 @@ function deleteBacklog(backlogFileName) {
             resetAll();
             let valueSelector = 'option[value="' + backlogFileName + '"]';
             $('#backlogSelector').find(valueSelector).remove();
+            alert(data);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert("Status: " + textStatus + "\nError: " + errorThrown);
+        }
+    });
+}
+
+function renameBacklog(backlogFileName, newBacklogName) {
+    $.ajax(MANAGER_PATH, {
+        method: 'POST',
+        data: {action: "rename", fileName: backlogFileName, newFileName: newBacklogName},
+        success: function (data, textStatus, jqXHR) {
+            let valueSelector = 'option[value="' + backlogFileName + '"]';
+            $('#backlogSelector').find(valueSelector).val(newBacklogName + ".json").text(newBacklogName);
+            alert(data);
         },
         error: function (jqXHR, textStatus, errorThrown) {
             alert("Status: " + textStatus + "\nError: " + errorThrown);
@@ -235,7 +251,7 @@ $(function () {
         }
 
         let backlog = generateBacklog(backlogName);
-        let jsonFile = backlog.name + ".json";
+        let jsonFile = backlog.name;
         let jsonBacklog = JSON.stringify(backlog, null, "\t");
 
         saveBacklog(jsonFile, jsonBacklog);
@@ -256,8 +272,14 @@ $(function () {
     $('#backlogDelete').click(function() {
         let selector = $('#backlogSelector');
         if(selector.val() === "") return;
-        if(confirm("Are you sure you want to delete backlog: " + selector.val())) {
+        if(confirm("Are you sure you want to delete backlog '" + selector.val().replace(".json", "") + "'")) {
             deleteBacklog(selector.val());
         }
+    });
+
+    $('#renameBacklog').click(function () {
+        let selector = $('#backlogName');
+        if(selector.val() === "") return;
+        renameBacklog($('#backlogSelector').val(), selector.val());
     });
 });
