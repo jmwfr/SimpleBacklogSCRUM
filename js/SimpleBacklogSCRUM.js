@@ -1,7 +1,7 @@
 const TASK_TEMPLATE = '<div class="task justify-content-between"><div id="taskContent" class="w-75"></div></div>';
 const TASK_TEXTAREA = '<textarea></textarea>';
-const TASK_SAVE_BUTTON = '<button class="taskSave btn btn-warning"><i class="far fa-check-circle"></i></button>';
-const TASK_CLOSE_BUTTON = '<button class="taskClose btn btn-warning align-right"><i class="far fa-times-circle"></i></button>';
+const TASK_SAVE_BUTTON = '<button class="taskSave btn btn-secondary"><i class="far fa-check-circle"></i></button>';
+const TASK_CLOSE_BUTTON = '<button class="taskClose btn btn-secondary align-right"><i class="far fa-times-circle"></i></button>';
 const ERROR_MSG = '<div class="bg-danger errorMessage"></div>';
 const MANAGER_PATH = "/includes/backlogManager.php";
 /**

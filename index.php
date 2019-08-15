@@ -8,6 +8,7 @@
     <title>Simple Backlog SCRUM</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Kalam|Lexend+Zetta|Raleway|Teko&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/SimpleBacklogSCRUM.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -35,7 +36,7 @@
                 $backlogsFiles = array_diff(scandir($backlogsDir), array('..', '.'));
                 ?>
                 <div id="backlogSelectorWrapper">
-                    <label for="backlogSelector" class="w-100 text-center">Select a backlog</label>
+                    <label for="backlogSelector" class="w-100 text-center">Select a Backlog</label>
                     <select id="backlogSelector" class="form-control">
                         <option value="">Select a backlog to load</option>
                         <?php
@@ -51,14 +52,15 @@
                     <button id="backlogDelete" class="btn btn-danger w-100">Delete Selected</button>
                 </div>
             </div>
-            <div id="backlogNameWrapper" class="mb-3">
+            <div id="backlogNameWrapper" class="mb-2">
                 <label for="backlogName" class="w-100 text-center">Backlog Name</label>
                 <input id="backlogName" class="form-control" name="backlogName" type="text">
                 <button id="renameBacklog" class="btn btn-primary w-100 mt-2">Rename Backlog</button>
                 <button id="saveBacklog" class="btn btn-primary w-100 mt-2">Save Backlog</button>
             </div>
-            <button id="btnAddTask" class="btn btn-primary w-100">Add Task</button>
             <div class="restWrapper">
+                <label class="w-100 text-center">Backlog Edition</label>
+                <button id="btnAddTask" class="btn btn-primary w-100">Add Task</button>
                 <button id="resetBacklog" class="btn btn-primary w-100 my-2">Reset</button>
             </div>
         </div>
