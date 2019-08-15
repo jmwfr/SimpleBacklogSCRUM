@@ -3,6 +3,7 @@ const TASK_TEXTAREA = '<textarea></textarea>';
 const TASK_SAVE_BUTTON = '<button class="taskSave btn btn-warning"><i class="far fa-check-circle"></i></button>';
 const TASK_CLOSE_BUTTON = '<button class="taskClose btn btn-warning align-right"><i class="far fa-times-circle"></i></button>';
 const ERROR_MSG = '<div class="bg-danger errorMessage"></div>';
+const MANAGER_PATH = "/includes/backlogManager.php";
 /**
  * Resets all the working area
  */
@@ -18,7 +19,7 @@ function resetAll() {
  * @param backlogContent
  */
 function saveBacklog(backlogFileName, backlogContent) {
-    $.ajax('backlogManager.php', {
+    $.ajax(MANAGER_PATH, {
         method: 'POST',
         data: {action: "save", fileName: backlogFileName, fileContent: backlogContent},
         success: function (data, textStatus, jqXHR) {
@@ -55,7 +56,7 @@ function fillTaskColumn(wrapper, tasksList) {
  * @param backlogFileName
  */
 function loadBackLog(backlogFileName) {
-    $.ajax('backlogManager.php', {
+    $.ajax(MANAGER_PATH, {
         method: 'POST',
         data: {action: "load", fileName: backlogFileName},
         success: function (data, textStatus, jqXHR) {

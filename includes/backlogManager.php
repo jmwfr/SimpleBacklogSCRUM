@@ -8,10 +8,10 @@ try
         $fileName = $_POST['fileName'];
         $fileContent = $_POST['fileContent'];
 
-        if(!file_exists("backlogs/"))
-            mkdir("backlogs/", 0777, true);
+        if(!file_exists("../backlogs/"))
+            mkdir("../backlogs/", 0777, true);
 
-        if(file_put_contents("backlogs/".$fileName, $fileContent))
+        if(file_put_contents("../backlogs/".$fileName, $fileContent))
         {
             echo "Backlog ".$fileName." saved successfully !";
         }
@@ -23,9 +23,9 @@ try
     if($action == "load")
     {
         $fileName = $_POST['fileName'];
-        if(file_exists("backlogs/".$fileName))
+        if(file_exists("../backlogs/".$fileName))
         {
-            echo file_get_contents("backlogs/".$fileName);
+            echo file_get_contents("../backlogs/".$fileName);
         }
         else
         {

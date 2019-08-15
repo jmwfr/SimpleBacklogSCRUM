@@ -27,12 +27,16 @@ You can use the "Reset" button to empty all the backlog workspace (please think 
 
 [Jean-Marc Aubertin](https://github.com/jmwfr)
 
+## License
+
+This software is licensed under the MIT license (details [here](LICENSE.md))
+
 ## Todos and Improvements
 
 * [ ] Update the select list when a backlog is saved
 * [ ] Check if backlog was saved before reseting
 * [ ] Add a remove backlog option
 * [ ] Add a rename backlog option
-* [ ] Move js and css files to distinct folders
+* [x] Move js and css files to distinct folders
 
 If you have any other ideas feel free to ask!   
