@@ -46,6 +46,9 @@
                             ?>
                         </select>
                     </div>
+                    <div id="backlogsActionsWrapper" class="d-flex justify-content-center mb-2">
+                        <button id="backlogDelete" class="btn btn-danger w-100">Delete Selected</button>
+                    </div>
                     <?php
                 }
                 ?>

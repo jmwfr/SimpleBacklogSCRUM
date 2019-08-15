@@ -32,6 +32,14 @@ try
             throw new Error("Error while reading backlog ($fileName)");
         }
     }
+    if($action == "delete")
+    {
+        $fileName = $_POST['fileName'];
+        if(file_exists("../backlogs/".$fileName))
+        {
+            unlink("../backlogs/".$fileName);
+        }
+    }
 
 }
 catch(Error $err)

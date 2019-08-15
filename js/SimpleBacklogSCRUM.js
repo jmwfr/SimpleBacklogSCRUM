@@ -23,7 +23,32 @@ function saveBacklog(backlogFileName, backlogContent) {
         method: 'POST',
         data: {action: "save", fileName: backlogFileName, fileContent: backlogContent},
         success: function (data, textStatus, jqXHR) {
+            let newOption = $('<option>', {
+                value: backlogFileName,
+                text: $('#backlogName').val()
+            });
+            if(!$.contains('#backlogSelector', newOption))
+            {
+                $('#backlogSelector').append(newOption);
+            }
+
+            $('#backlogSelector').val(backlogFileName);
             alert(data);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert("Status: " + textStatus + "\nError: " + errorThrown);
+        }
+    });
+}
+
+function deleteBacklog(backlogFileName) {
+    $.ajax(MANAGER_PATH, {
+        method: 'POST',
+        data: {action: "delete", fileName: backlogFileName},
+        success: function (data, textStatus, jqXHR) {
+            resetAll();
+            let valueSelector = 'option[value="' + backlogFileName + '"]';
+            $('#backlogSelector').find(valueSelector).remove();
         },
         error: function (jqXHR, textStatus, errorThrown) {
             alert("Status: " + textStatus + "\nError: " + errorThrown);
@@ -226,5 +251,13 @@ $(function () {
 
     $('#resetBacklog').click(function () {
         resetAll();
+    });
+
+    $('#backlogDelete').click(function() {
+        let selector = $('#backlogSelector');
+        if(selector.val() === "") return;
+        if(confirm("Are you sure you want to delete backlog: " + selector.val())) {
+            deleteBacklog(selector.val());
+        }
     });
 });
