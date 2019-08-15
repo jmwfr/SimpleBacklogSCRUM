@@ -30,28 +30,26 @@
             <div>
                 <?php
                 $backlogsDir = 'backlogs/';
+                if (!file_exists($backlogsDir))
+                    mkdir($backlogsDir, 0777, true);
                 $backlogsFiles = array_diff(scandir($backlogsDir), array('..', '.'));
-                if (count($backlogsFiles) > 0) {
-                    ?>
-                    <div id="backlogSelectorWrapper">
-                        <label for="backlogSelector" class="w-100 text-center">Select a backlog</label>
-                        <select id="backlogSelector" class="form-control">
-                            <option value="">Select a backlog to load</option>
-                            <?php
-                            foreach ($backlogsFiles as $backlogFile) {
-                                ?>
-                                <option value="<?php echo $backlogFile; ?>"><?php echo implode(".", explode(".", str_replace("___", " ", $backlogFile), -1)); ?></option>
-                                <?php
-                            }
-                            ?>
-                        </select>
-                    </div>
-                    <div id="backlogsActionsWrapper" class="d-flex justify-content-center mb-2">
-                        <button id="backlogDelete" class="btn btn-danger w-100">Delete Selected</button>
-                    </div>
-                    <?php
-                }
                 ?>
+                <div id="backlogSelectorWrapper">
+                    <label for="backlogSelector" class="w-100 text-center">Select a backlog</label>
+                    <select id="backlogSelector" class="form-control">
+                        <option value="">Select a backlog to load</option>
+                        <?php
+                        foreach ($backlogsFiles as $backlogFile) {
+                            ?>
+                            <option value="<?php echo $backlogFile; ?>"><?php echo implode(".", explode(".", str_replace("___", " ", $backlogFile), -1)); ?></option>
+                            <?php
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div id="backlogsActionsWrapper" class="d-flex justify-content-center mb-2">
+                    <button id="backlogDelete" class="btn btn-danger w-100">Delete Selected</button>
+                </div>
             </div>
             <div id="backlogNameWrapper" class="mb-3">
                 <label for="backlogName" class="w-100 text-center">Backlog Name</label>
