@@ -63,6 +63,9 @@
                 <button id="btnAddTask" class="btn btn-primary w-100">Add Task</button>
                 <button id="resetBacklog" class="btn btn-primary w-100 my-2">Reset</button>
             </div>
+            <div class="copyrightWrapper position-absolute text-center w-100">
+                Copyright &copy; 2019 - Jean-Marc Aubertin
+            </div>
         </div>
         <div id="todoCol" class="col-3 content-column">
             <div class="colTitle"><h2>Todo</h2></div>
