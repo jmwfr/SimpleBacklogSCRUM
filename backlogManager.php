@@ -8,6 +8,9 @@ try
         $fileName = $_POST['fileName'];
         $fileContent = $_POST['fileContent'];
 
+        if(!file_exists("backlogs/"))
+            mkdir("backlogs/", 0777, true);
+
         if(file_put_contents("backlogs/".$fileName, $fileContent))
         {
             echo "Backlog ".$fileName." saved successfully !";
