@@ -10,7 +10,7 @@ This is just a personal project, there is no security or concurent users managem
 
 ## Prerequisites
 
-A simple webserver with PHP enabled is enough to make it work
+A simple webserver with PHP enabled and an internet connection is enough to make it work
 
 ## Usage
 To add a task to the backlog just click the "Add Task" button, it will be directly added to the 'Todo' column.
