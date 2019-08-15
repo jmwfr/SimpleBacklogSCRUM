@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Kalam|Lexend+Zetta|Raleway|Teko&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/SimpleBacklogSCRUM.css">
+    <link rel="stylesheet" href="css/SimpleSCRUMBacklog.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
@@ -21,7 +21,7 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/6e948aba88.js"></script>
-    <script src="js/SimpleBacklogSCRUM.js"></script>
+    <script src="js/SimpleSCRUMBacklog.js"></script>
 </head>
 <body>
 <div id="contentWrapper" class="container-fluid">

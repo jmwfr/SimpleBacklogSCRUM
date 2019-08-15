@@ -1,4 +1,4 @@
-# SIMPLE BACKLOG SCRUM
+# SIMPLE SCRUM BACKLOG
 
 ## Introduction
 
