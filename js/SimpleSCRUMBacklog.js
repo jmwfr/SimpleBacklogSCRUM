@@ -325,7 +325,42 @@ $(function () {
     });
 
     $('#resetBacklog').click(function () {
-        resetAll();
+        let backlogFileName = $('#backlogSelector').val();
+        let backLogName = $('#backlogName').val();
+
+        let backlogTemp = generateBacklog(backLogName);
+        let backlogJSON;
+
+        $.ajax(MANAGER_PATH, {
+            method: 'POST',
+            data: {action: "load", fileName: backlogFileName},
+            success: function (data, textStatus, jqXHR) {
+                backlogJSON = eval("(" + data + ")");
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert("Status: " + textStatus + "\nError: " + errorThrown);
+            }
+        });
+
+        if(backlogTemp != backlogJSON)
+        {
+            $('body').jmwfrPopup("show", {
+                text: "Backlog '" + backlogFileName + "' was no saved.<br/>Are you sure you want to reset?",
+                buttonsType: popupButtonsTypes.YESNO,
+                title: "Backlog not saved!"
+            });
+
+            $('.jmwfrPopup').find('.btnYES').click(function() { 
+                resetAll(); 
+            });
+
+            $('.jmwfrPopup').find('.btnNO').click(function() { 
+                return;
+            });
+        }
+        else {
+            resetAll();
+        }
     });
 
     $('#backlogDelete').click(function() {
@@ -354,8 +389,6 @@ $(function () {
         colId = colId.replace("Col", "");
         
         let backlogJSON = generateBacklog(backLogName); //Generates a temp backlog
-
-        console.log(backlogJSON);
 
         if(colId == "todo") {
             let todoTasks = backlogJSON.todo.tasks;
