@@ -16,8 +16,10 @@ A simple webserver with PHP enabled and an internet connection is enough to make
 To add a task to the backlog just click the "Add Task" button, it will be directly added to the 'Todo' column.
 
 You can edit the content of a task by just double-cicking it.
+While editing you can set the task priority level.
 
-Then to move a task between development steps, just drag and drop it on the corresponding column.
+To move a task between development steps, just drag and drop it on the corresponding column.
+You can also sort (order ascending or descending) tasks by priority level using the arrows in the columns headers.
 
 Once you have saved a backlog, you can select it from the "Select a backlog list" to load it again.
 
@@ -25,7 +27,7 @@ You can rename a backlog by changing its name in the "Backlog Name" field and cl
 
 To delete a backlog just select it in the list and click the "Delete Selected" button.
 
-You can use the "Reset" button to empty all the backlog workspace (please think to save your work before that).
+You can use the "Reset" button to empty all the backlog workspace (you'll be asked to save your work before that if the current loaded backlog has been modified and not saved).
 
 ## Authors
 
@@ -41,7 +43,7 @@ This software is licensed under the MIT license (details [here](LICENSE.md))
 * [x] Add a remove backlog option
 * [x] Add a rename backlog option
 * [x] Move js and css files to distinct folders
-* [ ] Check if backlog was saved before reseting
+* [x] Check if backlog was saved before reseting
 * [x] Add sorting by priority
 
 If you have any other ideas feel free to ask!   
