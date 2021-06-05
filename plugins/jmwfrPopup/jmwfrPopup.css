@@ -1,0 +1,22 @@
+.jmwfrPopup {
+    background-color: rgba(200, 200, 200, 0.85);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top:0;
+    left:0;
+    z-index: 999999;
+}
+
+.jmwfrPopup .wrapper {
+    margin:auto;
+    cursor: pointer;
+}
+
+.jmwfrPopup .card {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.85);
+}
+
+.jmwfrPopup button {
+    font-family: 'Lexend Zetta', sans-serif;
+}

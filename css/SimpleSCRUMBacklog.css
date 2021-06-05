@@ -58,6 +58,17 @@ body {
     margin-bottom: 0px;
 }
 
+.colTitle .sorter {
+    font-size:0.75em;
+    right:0px;
+    position: relative;
+    cursor: pointer;
+}
+
+.colTitle .sorter i {
+    margin: 0px 2px 0px 2px;
+}
+
 .taskWrapper {
     height: 100%;
 }
@@ -77,23 +88,44 @@ body {
     width:100%;
     min-height: 60px;
     height: auto;
-    background-color: rgba(255,255,0,.70);
+    background-color: rgba(255,255,0,.90);
     box-shadow: 4px 4px 8px rgba(0,0,0,.85);
     margin: 10px 0px;
     cursor: pointer;
     z-index: 10;
     font-size: 14px;
-    padding: 2px 2px 2px 6px;
+    padding: 2px;
     display: flex;
     align-items: center;
-    border-radius: 4px;
+    border-radius: 4px 4px 4px 4px;
     overflow:visible;
     text-align: left;
     font-family: 'Kalam', cursive;
 }
 
+.taskPriority {
+    text-align: center;
+    font-style: normal;
+    font-family: 'Teko', sans-serif;
+    font-size: 14px;
+    padding-top: 1px;
+    width: 26px;
+    border-radius: 13px;
+    border: 2px solid rgba(0,0,0,1);
+    margin-left: 4px;
+}
+
+.task #taskPriority {
+    width: 36px;
+    margin-left: 4px;
+    background-color: transparent;
+    box-shadow: inset 2px 2px 3px #000000;
+    border: 0px solid transparent;
+    padding-left: 5px;
+}
+
 .task textarea {
-    width: 100%;
+    width: 75%;
     height: 100%;
     resize: none;
     border-radius: 4px;
@@ -105,10 +137,9 @@ body {
 }
 
 .task button {
-    width:20%;
     margin-left: 4px;
-    height:40px;
-    width: 40px;
+    height:28px;
+    width: 28px;
     color:#000;
     background-color: transparent;
     border: 0px solid transparent;

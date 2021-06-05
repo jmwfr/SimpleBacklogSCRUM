@@ -42,5 +42,6 @@ This software is licensed under the MIT license (details [here](LICENSE.md))
 * [x] Add a rename backlog option
 * [x] Move js and css files to distinct folders
 * [ ] Check if backlog was saved before reseting
+* [x] Add sorting by priority
 
 If you have any other ideas feel free to ask!   
